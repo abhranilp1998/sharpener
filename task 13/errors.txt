@@ -1,0 +1,29 @@
+FAIL
+/testcases.test.js
+Form submission
+✕should call event.preventDefault()(1 ms)
+✕should store user details as an object in the local storage(0 ms)
+● Form submission › should call event.preventDefault()
+handleFormSubmit is not a function
+
+  10 |         phone: { value: "1234567890" },
+  11 |       },
+  12 |     };
+> 13 |     handleFormSubmit(event);
+     | ^
+  14 |     expect(event.preventDefault).toHaveBeenCalled();
+  15 |   });
+● Form submission › should store user details as an object in the local storage
+handleFormSubmit is not a function
+
+  23 |         phone: { value: "1234567890" },
+  24 |       },
+  25 |     };
+> 26 |     handleFormSubmit(event);
+     | ^
+  27 |     const storedUserDetails = JSON.parse(localStorage.getItem("User Details"));
+  28 |     expect(storedUserDetails).toEqual({
+  29 |       username: "Test Name",
+Test suites: 1 failed, 1 total
+Tests:       2 failed, 2 total
+Time:        0.001s

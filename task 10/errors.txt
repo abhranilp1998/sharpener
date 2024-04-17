@@ -1,0 +1,37 @@
+FAIL
+/testcases.test.js
+DOM Manipulation
+✕should add a new fruit to the list when submitted(5 ms)
+✓should remove a fruit from the list when delete button is clicked(1 ms)
+✕should add an 'Edit' button to each fruit(1 ms)
+● DOM Manipulation › should add a new fruit to the list when submitted
+expect(received).toHaveLength(expected)
+
+Expected length: 5
+Received length: 4
+Received object: [<li class="fruit">Banana<button class="delete-btn">x</button><button class="edit-btn">Edit</button></li>, <li class="fruit">Apple<button class="delete-btn">x</button><button class="edit-btn">Edit</button></li>, <li class="fruit">Orange<button class="delete-btn">x</button><button class="edit-btn">Edit</button></li>, <li class="fruit">Kiwi<button class="delete-btn">x</button><button class="edit-btn">Edit</button></li>]
+
+  21 |     inputElement.value = fruitToAdd;
+  22 |     addButton.click();
+  23 |     const fruitElements = document.querySelectorAll(".fruit");
+> 24 |     expect(fruitElements).toHaveLength(5);
+     |                           ^
+  25 |     expect(fruitElements[4].textContent).toContain(fruitToAdd);
+  26 |   });
+● DOM Manipulation › should add an 'Edit' button to each fruit
+expect(received).toHaveLength(expected)
+
+Expected length: 3
+Received length: 4
+Received object: [<button class="edit-btn">Edit</button>, <button class="edit-btn">Edit</button>, <button class="edit-btn">Edit</button>, <button class="edit-btn">Edit</button>]
+
+  36 |   test("should add an 'Edit' button to each fruit", () => {
+  37 |     const editButtons = document.querySelectorAll(".edit-btn");
+  38 |     const fruitElements = document.querySelectorAll(".fruit");
+> 39 |     expect(editButtons).toHaveLength(fruitElements.length);
+     |                         ^
+  40 |   });
+  41 | });
+Test suites: 1 failed, 1 total
+Tests:       2 failed, 1 passed, 3 total
+Time:        0.007s

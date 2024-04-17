@@ -1,0 +1,43 @@
+FAIL
+/testcases.test.js
+DOM Manipulation
+✓should add a fruit to the fruit list on form submission(5 ms)
+✕should ensure that the fruit added to the fruit list has some description(1 ms)
+✕should show the description in italics(1 ms)
+✓should filter fruits by name(2 ms)
+✕should filter fruits by description(3 ms)
+● DOM Manipulation › should ensure that the fruit added to the fruit list has some description
+Cannot set properties of null (setting 'value')
+
+  31 |     const descriptionInput = document.getElementById("description");
+  32 |     const addButton = document.querySelector("form button");
+> 34 |     descriptionInput.value = descriptionToAdd;
+     | ^
+  35 |     addButton.click();
+  37 |     const fruitList = document.querySelector(".fruits");
+● DOM Manipulation › should show the description in italics
+Cannot set properties of null (setting 'value')
+
+  45 |     const descriptionInput = document.getElementById("description");
+  46 |     const addButton = document.querySelector("form button");
+> 48 |     descriptionInput.value = descriptionToAdd;
+     | ^
+  49 |     addButton.click();
+  51 |     const fruitList = document.querySelector(".fruits");
+● DOM Manipulation › should filter fruits by description
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 1
+Received: 0
+
+  78 |     const visibleFruits = Array.from(fruitItems).filter(
+  79 |       (fruitItem) => fruitItem.style.display !== "none"
+  80 |     );
+> 81 |     expect(visibleFruits.length).toBe(1);
+     |                                  ^
+  82 |     expect(visibleFruits[0].textContent.toLowerCase()).toContain("tropical");
+  83 |   });
+  84 | });
+Test suites: 1 failed, 1 total
+Tests:       3 failed, 2 passed, 5 total
+Time:        0.012s
