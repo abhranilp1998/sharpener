@@ -14,7 +14,7 @@ handleFormSubmit is not a function
   14 |     expect(event.preventDefault).toHaveBeenCalled();
   15 |   });
 ● Form submission › should store user details as an object in the local storage
-handleFormSubmit is not a function
+handleFormSubmit is not a function.
 
   23 |         phone: { value: "1234567890" },
   24 |       },
